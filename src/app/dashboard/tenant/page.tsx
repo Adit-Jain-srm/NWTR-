@@ -1,8 +1,13 @@
+"use client";
+
 import { StatCard } from "@/components/dashboard/stat-card";
+import { PageTransition } from "@/components/motion/page-transition";
+import Image from "next/image";
 
 export default function TenantDashboard() {
   return (
-    <div className="space-y-8">
+    <PageTransition>
+      <div className="space-y-8">
       <h1 className="text-2xl font-display font-bold text-navy-900">Welcome back, Aditya</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard title="Deposit Status" value="Active" icon="✅" trend="up" change="Since Mar 2026" />
@@ -11,10 +16,12 @@ export default function TenantDashboard() {
         <StatCard title="Total Saved" value="₹5,40,000" icon="💰" trend="up" change="vs paying rent" />
       </div>
 
-      <div className="bg-white rounded-xl border border-navy-100 p-6">
-        <h2 className="font-display font-bold text-navy-900 mb-4">Your Property</h2>
+      <div className="bg-white dark:bg-navy-800 rounded-xl border border-navy-100 dark:border-navy-700 p-6">
+        <h2 className="font-display font-bold text-navy-900 dark:text-white mb-4">Your Property</h2>
         <div className="flex flex-col md:flex-row gap-6">
-          <div className="w-full md:w-48 h-32 rounded-lg bg-navy-100" />
+          <div className="w-full md:w-48 h-32 rounded-lg overflow-hidden relative">
+            <Image src="/images/property-1.jpg" alt="Your property" fill className="object-cover" sizes="192px" />
+          </div>
           <div>
             <h3 className="font-display font-bold text-navy-900">3BHK Premium Apartment</h3>
             <p className="text-sm text-navy-500 mt-1">Koramangala 5th Block, Bangalore</p>
@@ -41,6 +48,7 @@ export default function TenantDashboard() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </PageTransition>
   );
 }

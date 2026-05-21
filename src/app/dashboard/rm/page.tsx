@@ -1,8 +1,12 @@
+"use client";
+
 import { StatCard } from "@/components/dashboard/stat-card";
+import { PageTransition } from "@/components/motion/page-transition";
 
 export default function RMDashboard() {
   return (
-    <div className="space-y-8">
+    <PageTransition>
+      <div className="space-y-8">
       <h1 className="text-2xl font-display font-bold text-navy-900">RM Dashboard</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard title="Active Leads" value="12" icon="🎯" trend="up" change="+3 this week" />
@@ -32,6 +36,7 @@ export default function RMDashboard() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </PageTransition>
   );
 }

@@ -1,8 +1,12 @@
+"use client";
+
 import { StatCard } from "@/components/dashboard/stat-card";
+import { PageTransition } from "@/components/motion/page-transition";
 
 export default function OwnerDashboard() {
   return (
-    <div className="space-y-8">
+    <PageTransition>
+      <div className="space-y-8">
       <h1 className="text-2xl font-display font-bold text-navy-900">Welcome back, Rajesh</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard title="Total Payouts" value="₹2,70,000" icon="💳" trend="up" change="+₹45,000 this month" />
@@ -29,6 +33,7 @@ export default function OwnerDashboard() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </PageTransition>
   );
 }

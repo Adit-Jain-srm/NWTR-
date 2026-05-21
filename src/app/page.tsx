@@ -1,11 +1,17 @@
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
+import { Hero } from "@/components/sections/hero";
+import { StatsBar } from "@/components/sections/stats-bar";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
-      <div className="flex flex-1 items-center justify-center">
-        <h1 className="font-display text-4xl font-bold text-navy-900">
-          NWTR
-        </h1>
-      </div>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <StatsBar />
+      </main>
+      <Footer />
+    </>
   );
 }

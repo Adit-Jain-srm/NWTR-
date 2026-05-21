@@ -8,10 +8,12 @@ import { TrustIndicators } from "@/components/sections/trust-indicators";
 import { DepositSimulator } from "@/components/sections/deposit-simulator";
 import { FAQ } from "@/components/sections/faq";
 import { CTASection } from "@/components/sections/cta-section";
+import { LoadingScreen } from "@/components/loading-screen";
 
 export default function Home() {
   return (
     <>
+      <LoadingScreen />
       <Navbar />
       <main>
         <Hero />

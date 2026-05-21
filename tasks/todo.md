@@ -10,7 +10,7 @@
 - [x] Appendix documents (3 docs)
 - [x] Cross-linking & consistency review
 
-## Website Implementation
+## Website Implementation (Phase 1 — Public)
 - [x] Next.js 15 + TypeScript + TailwindCSS scaffold with design tokens
 - [x] UI primitives (Button, Card, Badge, Container, Navbar, Footer)
 - [x] Motion system (ScrollReveal, AnimatedCounter, ScrollPinSection)
@@ -20,6 +20,21 @@
 - [x] Additional pages (/how-it-works, /for-tenants, /for-owners, /trust-security, /about)
 - [x] SEO (sitemap, robots.txt, structured data, OG meta)
 - [x] Deployed to Vercel: https://nwtr-web.vercel.app
+
+## Full-Stack Build (Phase 2 — Backend + Portals)
+- [x] Prisma schema (User, Property, Deposit, Investment, Payout, Agreement, KYC, AuditLog)
+- [x] NextAuth.js v5 with credentials + JWT sessions
+- [x] RBAC middleware (5 roles: Tenant, Owner, RM, Admin, Super Admin)
+- [x] API routes: Properties (CRUD, search), Deposits (create, simulate), Payouts, Users, KYC
+- [x] Auth pages (login, register) with premium dark UI
+- [x] Dashboard layout (sidebar, header, responsive)
+- [x] Tenant Portal (overview, properties, deposit timeline)
+- [x] Owner Portal (overview, property management, payout history)
+- [x] RM Portal (pipeline metrics, tasks, client management)
+- [x] Admin Portal (platform KPIs, user management, analytics)
+- [x] AI Chat assistant (OpenAI GPT-4o-mini streaming, floating widget)
+- [x] Database seed script (20 properties, 5 users, deposits, payouts)
+- [x] Deployed to Vercel (auto-deploy from GitHub)
 
 ## Pre-Launch Regulatory
 - [ ] Engage tier-1 legal firm for CIS vs NBFC deposit opinion
@@ -34,10 +49,10 @@
 - [ ] RM hiring & training framework
 
 ## Future Phases
-- [ ] Tenant Portal dashboard
-- [ ] Owner Portal dashboard
-- [ ] RM Portal
-- [ ] Admin Portal
-- [ ] AI integration (OpenAI assistant, semantic search)
-- [ ] Backend API (NestJS microservices)
-- [ ] Database + auth (PostgreSQL + Entra ID B2C)
+- [ ] Connect Neon PostgreSQL (production database)
+- [ ] Run prisma migrate + seed on production
+- [ ] Add OpenAI API key to Vercel env vars
+- [ ] Real-time notifications (Pusher/Ably)
+- [ ] File upload for KYC documents (Vercel Blob)
+- [ ] Email notifications (Resend)
+- [ ] Mobile responsive testing + PWA

@@ -91,9 +91,34 @@ export function DepositSimulator() {
                 <ResultRow label="Monthly Rent Equivalent" value={`${formatCurrency(monthlyPayout)}/mo`} />
                 <ResultRow label="Owner Receives" value={`${formatCurrency(monthlyPayout)}/mo`} />
                 <ResultRow label="Your Monthly Rent" value="₹0" accent />
-                <div className="h-px bg-navy-100 my-2" />
+                <div className="h-px bg-navy-100 dark:bg-navy-700 my-2" />
                 <ResultRow label="3-Year Savings vs. Renting" value={formatCurrency(threeYearSavings)} accent />
                 <ResultRow label="Deposit Returned After Tenure" value="100%" />
+                
+                {/* Visual comparison */}
+                <div className="mt-6 pt-4 border-t border-navy-100 dark:border-navy-700">
+                  <p className="text-xs text-navy-400 mb-3 uppercase tracking-wider">3-Year Comparison</p>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-red-500 font-medium">Traditional Rent</span>
+                        <span className="text-navy-600">{formatCurrency(threeYearSavings)} lost</span>
+                      </div>
+                      <div className="h-3 bg-red-100 dark:bg-red-500/20 rounded-full overflow-hidden">
+                        <div className="h-full bg-red-400 rounded-full" style={{ width: "100%" }} />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-emerald-500 font-medium">NWTR (Net Cost)</span>
+                        <span className="text-navy-600">₹0 lost</span>
+                      </div>
+                      <div className="h-3 bg-emerald-100 dark:bg-emerald-500/20 rounded-full overflow-hidden">
+                        <div className="h-full bg-emerald-400 rounded-full" style={{ width: "2%" }} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

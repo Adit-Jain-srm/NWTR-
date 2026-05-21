@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
 import Link from "next/link";
 
 const navLinks = [
@@ -33,10 +34,8 @@ export function Navbar() {
     >
       <Container size="wide">
         <nav className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-display text-2xl font-bold text-navy-900">
-              NWTR
-            </span>
+          <Link href="/" className="flex items-center">
+            <Logo size="default" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -44,7 +43,10 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-navy-600 hover:text-navy-900 transition-colors"
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  scrolled ? "text-navy-600 hover:text-navy-900" : "text-white/80 hover:text-white"
+                )}
               >
                 {link.label}
               </Link>

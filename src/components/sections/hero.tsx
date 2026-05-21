@@ -62,10 +62,10 @@ export function Hero() {
 
           <FadeIn delay={0.5}>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="primary" size="lg">
+              <Button variant="primary" size="lg" className="shadow-gold hover:shadow-[0_8px_32px_rgba(201,169,97,0.5)] transition-shadow">
                 Start Your Journey
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="ghost" size="lg" className="text-white border border-white/20 hover:bg-white/10">
                 See How It Works
               </Button>
             </div>
@@ -104,6 +104,21 @@ export function Hero() {
             value="₹1,20,000/mo saved"
           />
         </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5">
+            <motion.div
+              className="w-1.5 h-2.5 rounded-full bg-gold-400"
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
+        </motion.div>
       </Container>
     </section>
   );
@@ -122,7 +137,7 @@ function FloatingCard({
 }) {
   return (
     <motion.div
-      className={`${className} glass rounded-xl p-4 shadow-glass w-56`}
+      className={`${className} glass-dark rounded-xl p-4 shadow-glass w-56`}
       animate={{
         y: [0, -8, 0],
         rotate: [0, 0.5, 0],
@@ -134,8 +149,8 @@ function FloatingCard({
         delay,
       }}
     >
-      <div className="text-sm font-medium text-navy-800">{label}</div>
-      <div className="text-xs text-gold-700 mt-1 font-semibold">{value}</div>
+      <div className="text-sm font-medium text-white">{label}</div>
+      <div className="text-xs text-gold-400 mt-1 font-semibold">{value}</div>
     </motion.div>
   );
 }

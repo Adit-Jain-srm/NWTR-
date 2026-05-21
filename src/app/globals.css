@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Navy Palette ─── */
+  --color-navy-50: #F0F5FB;
+  --color-navy-100: #E0EAF5;
+  --color-navy-200: #B3C9E2;
+  --color-navy-300: #7A9BC4;
+  --color-navy-400: #4A6FA5;
+  --color-navy-500: #2A4D8F;
+  --color-navy-600: #1E3A6B;
+  --color-navy-700: #162D54;
+  --color-navy-800: #0F2140;
+  --color-navy-900: #0A1628;
+  --color-navy-950: #050D1A;
+
+  /* ─── Gold Palette ─── */
+  --color-gold-50: #FBF7EE;
+  --color-gold-100: #F5EDD6;
+  --color-gold-200: #EBDBB0;
+  --color-gold-300: #DFC885;
+  --color-gold-400: #D4B978;
+  --color-gold-500: #C9A961;
+  --color-gold-600: #B8944D;
+  --color-gold-700: #A07F3F;
+  --color-gold-800: #876B35;
+  --color-gold-900: #7A6433;
+
+  /* ─── Surface Palette ─── */
+  --color-surface-50: #FAFBFD;
+  --color-surface-100: #F5F6F8;
+  --color-surface-200: #EBEDF1;
+
+  /* ─── Semantic Colors ─── */
+  --color-emerald-50: #ECFDF5;
+  --color-emerald-500: #10B981;
+  --color-red-50: #FEF2F2;
+  --color-red-500: #EF4444;
+  --color-amber-50: #FFFBEB;
+  --color-amber-500: #F59E0B;
+
+  /* ─── Font Families ─── */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Satoshi", "Inter", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", "SF Mono", monospace;
+
+  /* ─── Border Radius ─── */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+
+  /* ─── Box Shadows ─── */
+  --shadow-glass: 0 8px 32px rgba(10, 22, 40, 0.08);
+  --shadow-glass-lg: 0 16px 48px rgba(10, 22, 40, 0.12);
+  --shadow-gold: 0 4px 24px rgba(201, 169, 97, 0.3);
+  --shadow-elevated: 0 24px 64px rgba(10, 22, 40, 0.16);
+
+  /* ─── Animations ─── */
+  --ease-primary: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-entrance: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* ─── Base Styles ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-navy-950);
+  background-color: var(--color-surface-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv01", "cv02", "ss01";
+}
+
+::selection {
+  background-color: var(--color-gold-200);
+  color: var(--color-navy-900);
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Glassmorphism Utilities ─── */
+@utility glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@utility glass-dark {
+  background: rgba(10, 22, 40, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@utility gold-gradient-text {
+  background: linear-gradient(135deg, var(--color-gold-500), var(--color-gold-300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility gold-gradient-bg {
+  background: linear-gradient(135deg, var(--color-gold-600), var(--color-gold-400));
+}
+
+@utility navy-gradient-bg {
+  background: linear-gradient(180deg, var(--color-navy-900), var(--color-navy-950));
+}

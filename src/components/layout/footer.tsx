@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { Divider } from "@/components/ui/divider";
+import { Logo } from "@/components/ui/logo";
 import Link from "next/link";
 
 const footerLinks = {
@@ -48,9 +49,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-8 lg:mb-0">
             <Link href="/" className="inline-block">
-              <span className="font-display text-2xl font-bold text-white">
-                NWTR
-              </span>
+              <Logo variant="light" />
             </Link>
             <p className="mt-4 text-sm text-navy-300 max-w-xs">
               The future of intelligent renting. Deposit your way to premium

@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/ui/logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -48,7 +49,7 @@ export function Sidebar({ role }: SidebarProps) {
     <aside className="hidden lg:flex flex-col w-64 bg-navy-900 min-h-screen fixed left-0 top-0">
       <div className="p-6 border-b border-navy-700">
         <Link href="/">
-          <span className="font-display text-xl font-bold text-white">NWTR</span>
+          <Logo variant="light" size="sm" />
         </Link>
         <p className="text-xs text-navy-400 mt-1">{role} Portal</p>
       </div>

@@ -1,8 +1,12 @@
+"use client";
+
 import { StatCard } from "@/components/dashboard/stat-card";
+import { PageTransition } from "@/components/motion/page-transition";
 
 export default function AdminDashboard() {
   return (
-    <div className="space-y-8">
+    <PageTransition>
+      <div className="space-y-8">
       <h1 className="text-2xl font-display font-bold text-navy-900">Platform Overview</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <StatCard title="Total Users" value="1,247" icon="👥" trend="up" change="+89 this month" />
@@ -29,6 +33,7 @@ export default function AdminDashboard() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </PageTransition>
   );
 }

@@ -18,17 +18,19 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-surface-50 via-white to-gold-50/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900" />
+      <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-15 mix-blend-luminosity" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/80" />
 
       {/* Floating ambient elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 right-[10%] w-72 h-72 rounded-full bg-gold-100/40 blur-3xl"
+          className="absolute top-1/4 right-[10%] w-72 h-72 rounded-full bg-gold-500/10 blur-3xl"
           animate={{ y: [0, -20, 0], scale: [1, 1.05, 1] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-1/4 left-[5%] w-96 h-96 rounded-full bg-navy-100/30 blur-3xl"
+          className="absolute bottom-1/4 left-[5%] w-96 h-96 rounded-full bg-gold-500/5 blur-3xl"
           animate={{ y: [0, 15, 0], scale: [1, 0.95, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -43,7 +45,7 @@ export function Hero() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-white">
               The Future of{" "}
               <GradientText gradient="gold" as="span">
                 Intelligent Renting
@@ -52,7 +54,7 @@ export function Hero() {
           </FadeIn>
 
           <FadeIn delay={0.35}>
-            <p className="mt-6 text-lg sm:text-xl text-navy-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-6 text-lg sm:text-xl text-navy-300 max-w-2xl mx-auto leading-relaxed">
               Deposit your way to premium living. Zero monthly rent.
               Full refund guaranteed. Powered by NBFC-grade financial infrastructure.
             </p>

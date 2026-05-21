@@ -83,6 +83,17 @@ body {
   color: var(--color-navy-900);
 }
 
+/* ─── Dark Mode Overrides ─── */
+.dark body {
+  color: var(--color-navy-100);
+  background-color: var(--color-navy-950);
+}
+
+.dark ::selection {
+  background-color: var(--color-gold-800);
+  color: var(--color-gold-100);
+}
+
 /* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -1,7 +1,7 @@
 export const EASING = {
-  primary: [0.22, 1, 0.36, 1] as const,
-  entrance: [0, 0, 0.2, 1] as const,
-  exit: [0.4, 0, 1, 1] as const,
+  primary: [0.22, 1, 0.36, 1] as [number, number, number, number],
+  entrance: [0, 0, 0.2, 1] as [number, number, number, number],
+  exit: [0.4, 0, 1, 1] as [number, number, number, number],
   spring: { type: "spring" as const, stiffness: 300, damping: 30 },
   springGentle: { type: "spring" as const, stiffness: 200, damping: 25 },
 };

@@ -38,12 +38,12 @@ export const ROLES = {
 
 export const NAV_LINKS = {
   public: [
-    { href: "/how-it-works", label: "How It Works" },
-    { href: "/properties", label: "Properties" },
-    { href: "/for-tenants", label: "For Tenants" },
-    { href: "/for-owners", label: "For Owners" },
-    { href: "/trust-security", label: "Trust & Security" },
-    { href: "/about", label: "About" },
+    { href: "/how-it-works", label: "How It Works", icon: "" },
+    { href: "/properties", label: "Properties", icon: "" },
+    { href: "/for-tenants", label: "For Tenants", icon: "" },
+    { href: "/for-owners", label: "For Owners", icon: "" },
+    { href: "/trust-security", label: "Trust & Security", icon: "" },
+    { href: "/about", label: "About", icon: "" },
   ],
   tenant: [
     { href: "/dashboard", label: "Overview", icon: "📊" },

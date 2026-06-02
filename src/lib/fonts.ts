@@ -23,21 +23,9 @@ export const jetbrainsMono = JetBrains_Mono({
 
 export const satoshi = localFont({
   src: [
-    {
-      path: "../assets/fonts/Satoshi-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../assets/fonts/Satoshi-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../assets/fonts/Satoshi-Black.woff2",
-      weight: "900",
-      style: "normal",
-    },
+    { path: "../assets/fonts/Satoshi-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../assets/fonts/Satoshi-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../assets/fonts/Satoshi-Black.woff2", weight: "900", style: "normal" },
   ],
   display: "swap",
   variable: "--font-satoshi",

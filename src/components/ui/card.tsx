@@ -1,28 +1,30 @@
 import { cn } from "@/lib/utils";
 
-type CardVariant = "glass" | "solid" | "elevated";
+type CardVariant = "solid" | "glass" | "elevated" | "interactive";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: CardVariant;
-  hover?: boolean;
+  padding?: "none" | "sm" | "md" | "lg";
 }
 
 const variantStyles: Record<CardVariant, string> = {
-  glass: "glass rounded-xl",
-  solid: "bg-white border border-navy-100 rounded-xl",
-  elevated: "bg-white rounded-xl shadow-glass",
+  solid: "bg-white border border-navy-100 dark:bg-navy-900 dark:border-navy-800",
+  glass: "glass dark:glass-dark",
+  elevated: "bg-white shadow-lg dark:bg-navy-900 dark:shadow-navy-950/50",
+  interactive:
+    "bg-white border border-navy-100 dark:bg-navy-900 dark:border-navy-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-gold-200 dark:hover:border-gold-500/30 cursor-pointer",
 };
 
-export function Card({ className, variant = "solid", hover = false, children, ...props }: CardProps) {
+const paddingStyles = {
+  none: "",
+  sm: "p-4",
+  md: "p-6",
+  lg: "p-8",
+};
+
+export function Card({ className, variant = "solid", padding = "md", children, ...props }: CardProps) {
   return (
-    <div
-      className={cn(
-        variantStyles[variant],
-        hover && "transition-all duration-300 hover:-translate-y-1 hover:shadow-glass-lg",
-        className
-      )}
-      {...props}
-    >
+    <div className={cn("rounded-xl", variantStyles[variant], paddingStyles[padding], className)} {...props}>
       {children}
     </div>
   );
@@ -30,7 +32,7 @@ export function Card({ className, variant = "solid", hover = false, children, ..
 
 export function CardHeader({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("px-6 pt-6 pb-2", className)} {...props}>
+    <div className={cn("pb-4", className)} {...props}>
       {children}
     </div>
   );
@@ -38,7 +40,15 @@ export function CardHeader({ className, children, ...props }: React.HTMLAttribut
 
 export function CardContent({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("px-6 pb-6", className)} {...props}>
+    <div className={cn(className)} {...props}>
+      {children}
+    </div>
+  );
+}
+
+export function CardFooter({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div className={cn("pt-4 mt-4 border-t border-navy-50 dark:border-navy-800", className)} {...props}>
       {children}
     </div>
   );

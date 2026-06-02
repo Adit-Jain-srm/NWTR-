@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { inter, playfair, jetbrainsMono, satoshi } from "@/lib/fonts";
+import { Providers } from "@/components/providers";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -77,7 +78,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to main content
         </a>
-        <div id="main-content">{children}</div>
+        <div id="main-content">
+          <Providers>{children}</Providers>
+        </div>
       </body>
     </html>
   );

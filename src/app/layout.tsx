@@ -1,3 +1,5 @@
+import "./globals.css";
+
 export const metadata = {
   title: "NWTR — The Future of Intelligent Renting",
   description: "Deposit your way to premium living. Zero monthly rent. Full refund guaranteed.",

@@ -27,18 +27,30 @@ export default function Home() {
       >
         <ScrollCompanion />
         <SoundToggle />
-        <OpeningStatement />
-        <ContrastSplit />
+        <div id="opening">
+          <OpeningStatement />
+        </div>
+        <div id="contrast">
+          <ContrastSplit />
+        </div>
         <div id="how">
           <MoneyFlow />
         </div>
-        <ProofNumbers />
+        <div id="proof">
+          <ProofNumbers />
+        </div>
         <div id="calculator">
           <DepositSimulator />
         </div>
-        <PropertyShowcase />
-        <SecurityArchitecture />
-        <ExclusiveClose />
+        <div id="properties">
+          <PropertyShowcase />
+        </div>
+        <div id="security">
+          <SecurityArchitecture />
+        </div>
+        <div id="close">
+          <ExclusiveClose />
+        </div>
       </motion.div>
     </>
   );

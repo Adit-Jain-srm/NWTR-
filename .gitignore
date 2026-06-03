@@ -30,7 +30,7 @@ Thumbs.db
 .vercel/
 
 # Prisma
-prisma/migrations/
+# prisma/migrations/ — keep migrations in git for production
 
 # Test
 coverage/

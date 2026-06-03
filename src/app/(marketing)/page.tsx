@@ -7,6 +7,7 @@ import { ProofNumbers } from "@/components/sections/proof-numbers";
 import { DepositSimulator } from "@/components/sections/deposit-simulator";
 import { SecurityArchitecture } from "@/components/sections/security-architecture";
 import { ExclusiveClose } from "@/components/sections/exclusive-close";
+import { ScrollCompanion } from "@/components/motion/scroll-companion";
 import { PagePreloader } from "@/components/motion/page-preloader";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -22,11 +23,16 @@ export default function Home() {
         animate={preloaderDone ? { opacity: 1 } : {}}
         transition={{ duration: 0.4 }}
       >
+        <ScrollCompanion />
         <OpeningStatement />
         <ContrastSplit />
-        <MoneyFlow />
+        <div id="how">
+          <MoneyFlow />
+        </div>
         <ProofNumbers />
-        <DepositSimulator />
+        <div id="calculator">
+          <DepositSimulator />
+        </div>
         <SecurityArchitecture />
         <ExclusiveClose />
       </motion.div>

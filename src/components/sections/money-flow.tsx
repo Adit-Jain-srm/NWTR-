@@ -61,11 +61,13 @@ export function MoneyFlow() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-navy-950"
+      className="relative bg-[#070E18]"
       style={{ height: "300vh" }}
     >
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,169,97,0.03)_0%,_transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,169,97,0.04)_0%,_transparent_50%)]" />
+        {/* Subtle grid for depth */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(rgba(201,169,97,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,169,97,0.3) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
 
         <div className="relative z-10 w-full max-w-3xl mx-auto px-6">
           {/* Section label */}

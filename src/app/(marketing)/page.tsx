@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero";
+import { ActivityTicker } from "@/components/sections/activity-ticker";
 import { StatsBar } from "@/components/sections/stats-bar";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { ValueProposition } from "@/components/sections/value-proposition";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ActivityTicker />
       <StatsBar />
       <HowItWorks />
       <ValueProposition />

@@ -25,27 +25,38 @@
 - [x] Pushed to GitHub + Vercel auto-deploy
 - [x] GitNexus indexed (2,731 nodes, 3,184 edges)
 
-## Sub-Project 2: Marketing Website 🔜 NEXT
-- [ ] 3D Hero section (Spline vault + dark cinematic background)
-- [ ] Scroll-driven "How It Works" storytelling (5 scenes)
-- [ ] Stats bar with animated counters
-- [ ] Value proposition (tenant + owner sections)
-- [ ] Trust & security section
-- [ ] Deposit simulator (interactive sliders + comparison chart)
-- [ ] FAQ accordion
-- [ ] CTA section
-- [ ] Property browse page (/properties)
-- [ ] Property detail page (/properties/[id])
-- [ ] /for-tenants, /for-owners, /trust-security, /about, /calculator
-- [ ] Loading screen (branded animation)
-- [ ] Activity ticker (social proof)
+## Sub-Project 2: Marketing Website ✅ COMPLETE
+- [x] 3D Hero section (dark cinematic bg + gold typography + floating cards)
+- [x] Scroll-driven "How It Works" storytelling (5 scenes, ScrollPinSection)
+- [x] Stats bar with animated counters (4 metrics)
+- [x] Value proposition (tenant + owner benefit cards, stagger animations)
+- [x] Trust & security section (6 features + partner logos)
+- [x] Deposit simulator (interactive sliders + comparison bars)
+- [x] FAQ accordion (Radix-based, 3 categories, animated)
+- [x] CTA section (navy bg, dual-persona buttons)
+- [x] /for-tenants, /for-owners, /trust-security, /about, /how-it-works pages
+- [x] SEO: sitemap.xml + robots.txt
+- [x] Route group (marketing) with Navbar + Footer layout
+- [x] Build: 9 routes, all static, 170 kB max first-load
+- [x] Pushed to GitHub + Vercel auto-deploy
+- [x] GitNexus indexed (2,851 nodes, 3,528 edges, 9 clusters, 27 flows)
 
-## Sub-Project 3: Core Business Engine
-- [ ] Prisma schema (full — already exists)
-- [ ] API routes (Properties, Deposits, Payouts, Users, KYC)
-- [ ] Business logic (deposit calc, payout scheduling, KYC gating, state machines)
-- [ ] Auth (NextAuth.js, credentials, RBAC middleware)
-- [ ] Seed script
+## Sub-Project 3: Core Business Engine 🔜 NEXT
+- [ ] Prisma schema (full — already exists from SP1)
+- [ ] Prisma client singleton + seed script
+- [ ] API routes: Auth (register, login via NextAuth)
+- [ ] API routes: Properties (CRUD, search, verify)
+- [ ] API routes: Deposits (create, simulate, status, cancel)
+- [ ] API routes: Payouts (list, schedule, execute)
+- [ ] API routes: Users (me, update profile)
+- [ ] API routes: KYC (submit, status, verify)
+- [ ] Business logic: deposit calculation engine
+- [ ] Business logic: payout scheduling + state machine
+- [ ] Business logic: KYC tier gating
+- [ ] Business logic: trust score computation
+- [ ] RBAC middleware (requireRole, requirePermission)
+- [ ] Standard API response envelope + error codes
+- [ ] Database seed (20 properties, 5 users, deposits, payouts)
 
 ## Sub-Project 4: Portal Dashboards
 - [ ] Shared dashboard shell (sidebar, header, Cmd+K, mobile nav)

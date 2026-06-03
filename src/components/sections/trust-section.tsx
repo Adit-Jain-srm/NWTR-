@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Heading } from "@/components/ui/heading";
 import { Text } from "@/components/ui/text";
-import { SecurityBadge, PartnerLogos } from "@/components/ui/security-badge";
+import { PartnerLogos } from "@/components/ui/security-badge";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children";
 

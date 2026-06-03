@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "lastProcessedAt": "2026-06-03T01:00:00.000Z",
+  "transcripts": {
+    "277ac1c7-230d-429d-afb3-824a6baab4df": {
+      "mtime": "2026-06-03T01:00:00.000Z",
+      "processed": true,
+      "highSignalUpdates": [
+        "Sequential execution preference (no parallel subagents)",
+        "Document + test + verify workflow at each checkpoint",
+        "GitNexus indexing at each sub-project boundary"
+      ]
+    }
+  }
+}

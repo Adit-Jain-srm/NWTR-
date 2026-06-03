@@ -35,6 +35,13 @@ NWTR ("New Way To Rent") is a premium proptech-fintech platform. This repo conta
 - Use Vitest + React Testing Library
 - API tests use direct route handler invocation
 
+## Workflow Preferences
+- **Sequential execution only** — no parallel subagents during implementation
+- **Document + test + verify** before proceeding to next sub-project
+- **Run `npx gitnexus analyze`** at each sub-project checkpoint
+- **Commit frequently** with descriptive messages (feat/fix/docs/test prefixes)
+- **Build must pass** (`next build` + `tsc --noEmit` + `vitest run`) before any push
+
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 

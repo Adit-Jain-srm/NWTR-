@@ -7,46 +7,46 @@ todos:
     status: completed
   - id: a2-property-detail
     content: Phase A.2 — Property detail page /properties/[id] with image gallery, sticky deposit calculator, amenities, schedule-viewing modal, save-to-favorites.
-    status: in_progress
+    status: completed
   - id: a3-ai-tools
     content: Phase A.3 — Upgrade AI chat to agent with tools (searchProperties, calculateDeposit, saveProperty, scheduleViewing) using Vercel AI SDK function calling. Render tool results as rich cards.
-    status: pending
+    status: completed
   - id: a4-activity-ticker
     content: Phase A.4 — Live activity ticker on landing + personalized savings counter on dashboard. Auto-refresh, count-up animations.
-    status: pending
+    status: completed
   - id: a5-comparison
     content: Phase A.5 — Property comparison drawer (select 2-3 properties, slide-up panel, side-by-side compare page). Persistent via Zustand/Context.
-    status: pending
+    status: completed
   - id: b1-deposit-checkout
     content: Phase B.1 — Deposit checkout multi-step flow (eligibility, configure, review, confirm). Beautiful step transitions, vault-lock success animation.
-    status: pending
+    status: completed
   - id: b2-kyc-flow
     content: Phase B.2 — KYC submission flow at /dashboard/tenant/kyc with 3 tiers, file upload, progress, under-review state.
-    status: pending
+    status: completed
   - id: b3-listing-flow
     content: Phase B.3 — Owner listing wizard at /dashboard/owner/list-property (basics, photos, amenities, pricing, review).
-    status: pending
+    status: completed
   - id: b4-viewing-schedule
     content: Phase B.4 — Viewing scheduler with calendar grid, time slots, ICS download confirmation.
-    status: pending
+    status: completed
   - id: c1-fix-visuals
     content: Phase C.1 — Fix navbar overlap, verify dark mode coverage, refine property card hover states across breakpoints.
-    status: pending
+    status: completed
   - id: c2-empty-states
     content: Phase C.2 — Reusable EmptyState component + apply to all dashboards (no deposit, no properties, no comparison, no results).
-    status: pending
+    status: completed
   - id: c3-microinteractions
     content: Phase C.3 — Favorites heart pulse, form submit checkmarks, route progress bar, smoother slider feedback.
-    status: pending
+    status: completed
   - id: c4-mobile-polish
     content: Phase C.4 — Mobile audit at 375px viewport for every page, role-aware bottom nav, mobile table -> card layouts, swipe gestures.
-    status: pending
+    status: completed
   - id: c5-seo-perf
     content: Phase C.5 — Dynamic OG images per property, JSON-LD RealEstateListing schema, lazy-load explainer, Lighthouse 90+ verification.
-    status: pending
+    status: completed
   - id: todo-1780452866450-d2buxwehs
     content: Run frontend testings end to end, blackbox & whitebox testing very throughly.
-    status: pending
+    status: completed
 isProject: false
 ---
 

@@ -58,11 +58,28 @@ export function AIChatWidget() {
       setMessages(prev => [...prev, { id: assistantId, role: "assistant", content: "" }]);
 
       if (reader) {
+        let buffer = "";
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
-          content += decoder.decode(value, { stream: true });
-          setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, content } : m));
+          buffer += decoder.decode(value, { stream: true });
+          
+          const lines = buffer.split("\n");
+          buffer = lines.pop() || "";
+          
+          for (const line of lines) {
+            if (!line.startsWith("data: ")) continue;
+            const data = line.slice(6);
+            if (data === "[DONE]") continue;
+            try {
+              const parsed = JSON.parse(data);
+              const delta = parsed.choices?.[0]?.delta?.content;
+              if (delta) {
+                content += delta;
+                setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, content } : m));
+              }
+            } catch {}
+          }
         }
       }
     } catch {

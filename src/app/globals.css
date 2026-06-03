@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 /* ═══════════════════════════════════════════════════════════
    NWTR Design Token System
    Source: docs/03-ux-ui/color-psychology.md + design-language.md

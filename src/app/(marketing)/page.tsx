@@ -1,14 +1,12 @@
 "use client";
 
-import { Hero } from "@/components/sections/hero";
-import { ActivityTicker } from "@/components/sections/activity-ticker";
-import { StatsBar } from "@/components/sections/stats-bar";
-import { HowItWorks } from "@/components/sections/how-it-works";
-import { ValueProposition } from "@/components/sections/value-proposition";
-import { TrustSection } from "@/components/sections/trust-section";
+import { OpeningStatement } from "@/components/sections/opening-statement";
+import { ContrastSplit } from "@/components/sections/contrast-split";
+import { MoneyFlow } from "@/components/sections/money-flow";
+import { ProofNumbers } from "@/components/sections/proof-numbers";
 import { DepositSimulator } from "@/components/sections/deposit-simulator";
-import { FAQ } from "@/components/sections/faq";
-import { CTASection } from "@/components/sections/cta-section";
+import { SecurityArchitecture } from "@/components/sections/security-architecture";
+import { ExclusiveClose } from "@/components/sections/exclusive-close";
 import { PagePreloader } from "@/components/motion/page-preloader";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -18,21 +16,19 @@ export default function Home() {
 
   return (
     <>
-      <PagePreloader onComplete={() => setPreloaderDone(true)} duration={2} />
+      <PagePreloader onComplete={() => setPreloaderDone(true)} duration={1.2} />
       <motion.div
         initial={{ opacity: 0 }}
         animate={preloaderDone ? { opacity: 1 } : {}}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.4 }}
       >
-        <Hero />
-        <ActivityTicker />
-        <StatsBar />
-        <HowItWorks />
-        <ValueProposition />
-        <TrustSection />
+        <OpeningStatement />
+        <ContrastSplit />
+        <MoneyFlow />
+        <ProofNumbers />
         <DepositSimulator />
-        <FAQ />
-        <CTASection />
+        <SecurityArchitecture />
+        <ExclusiveClose />
       </motion.div>
     </>
   );

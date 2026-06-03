@@ -21,7 +21,7 @@ const sections = {
       { href: "/about", label: "About Us" },
       { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact" },
-      { href: "#", label: "Careers" },
+      { href: "/careers", label: "Careers" },
     ],
   },
   legal: {
@@ -29,17 +29,17 @@ const sections = {
     links: [
       { href: "/privacy", label: "Privacy Policy" },
       { href: "/terms", label: "Terms of Service" },
-      { href: "#", label: "Refund Policy" },
-      { href: "#", label: "Grievance Redressal" },
+      { href: "/refund-policy", label: "Refund Policy" },
+      { href: "/grievance", label: "Grievance Redressal" },
     ],
   },
   support: {
     title: "Support",
     links: [
-      { href: "#", label: "Help Center" },
+      { href: "/help", label: "Help Center" },
       { href: "/contact", label: "Contact Us" },
-      { href: "#", label: "FAQs" },
-      { href: "#", label: "Partner with Us" },
+      { href: "/help", label: "FAQs" },
+      { href: "/partner", label: "Partner with Us" },
     ],
   },
 };

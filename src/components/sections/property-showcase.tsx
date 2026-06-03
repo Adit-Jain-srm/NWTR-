@@ -3,13 +3,49 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const properties = [
-  { id: "prop-koramangala-3bhk", name: "3BHK Koramangala", area: "1,450 sq ft", deposit: "₹35 L", location: "5th Block, Koramangala", image: "/images/properties/koramangala.jpg" },
-  { id: "prop-indiranagar-4bhk", name: "4BHK Indiranagar", area: "2,100 sq ft", deposit: "₹52 L", location: "12th Main, Indiranagar", image: "/images/properties/indiranagar.jpg" },
-  { id: "prop-hsr-penthouse", name: "Penthouse HSR", area: "3,200 sq ft", deposit: "₹1.2 Cr", location: "Sector 2, HSR Layout", image: "/images/properties/hsr.jpg" },
-  { id: "prop-whitefield-villa", name: "Villa Whitefield", area: "4,500 sq ft", deposit: "₹1.8 Cr", location: "ITPL Main Road", image: "/images/properties/whitefield.jpg" },
-  { id: "prop-jp-nagar-3bhk", name: "3BHK JP Nagar", area: "1,600 sq ft", deposit: "₹28 L", location: "Phase 6, JP Nagar", image: "/images/properties/jpnagar.jpg" },
+  {
+    id: "prop-koramangala-3bhk",
+    name: "3BHK Koramangala",
+    area: "1,450 sq ft",
+    deposit: "₹35 L",
+    location: "5th Block, Koramangala",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80&auto=format",
+  },
+  {
+    id: "prop-indiranagar-4bhk",
+    name: "4BHK Indiranagar",
+    area: "2,100 sq ft",
+    deposit: "₹52 L",
+    location: "12th Main, Indiranagar",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format",
+  },
+  {
+    id: "prop-hsr-penthouse",
+    name: "Penthouse HSR",
+    area: "3,200 sq ft",
+    deposit: "₹1.2 Cr",
+    location: "Sector 2, HSR Layout",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&auto=format",
+  },
+  {
+    id: "prop-whitefield-villa",
+    name: "Villa Whitefield",
+    area: "4,500 sq ft",
+    deposit: "₹1.8 Cr",
+    location: "ITPL Main Road",
+    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80&auto=format",
+  },
+  {
+    id: "prop-jp-nagar-3bhk",
+    name: "3BHK JP Nagar",
+    area: "1,600 sq ft",
+    deposit: "₹28 L",
+    location: "Phase 6, JP Nagar",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80&auto=format",
+  },
 ];
 
 export function PropertyShowcase() {
@@ -47,7 +83,7 @@ export function PropertyShowcase() {
 
       {/* Horizontal scroll strip */}
       <motion.div
-        className="flex gap-4 px-6 sm:px-8 lg:px-12 overflow-x-auto scrollbar-hide pb-4"
+        className="flex gap-4 px-6 sm:px-8 lg:px-12 overflow-x-auto pb-4"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ delay: 0.2 }}
@@ -62,15 +98,21 @@ export function PropertyShowcase() {
             transition={{ delay: 0.1 + i * 0.08 }}
           >
             <Link href={`/properties/${prop.id}`}>
-              {/* Image placeholder — gradient representing the property */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-navy-800 to-navy-900 border border-navy-700 group-hover:border-gold-500/30 transition-colors relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,169,97,0.05)_0%,_transparent_70%)]" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-navy-950/80 to-transparent">
-                  <div className="text-xs text-gold-400 font-medium">{prop.deposit}</div>
-                </div>
-                {/* Placeholder text */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[10px] uppercase tracking-wider text-navy-600">Property image</span>
+              <div className="aspect-[4/3] relative overflow-hidden rounded-lg border border-navy-700 group-hover:border-gold-500/30 transition-all duration-300">
+                <Image
+                  src={prop.image}
+                  alt={prop.name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="320px"
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent" />
+                {/* Deposit badge */}
+                <div className="absolute bottom-3 left-3">
+                  <span className="text-xs font-semibold text-gold-400 bg-navy-950/70 backdrop-blur-sm px-2.5 py-1 rounded">
+                    {prop.deposit}
+                  </span>
                 </div>
               </div>
 

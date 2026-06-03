@@ -105,11 +105,27 @@ export default function LoginPage() {
           </p>
         </form>
 
-        {/* Demo credentials hint */}
-        <div className="mt-6 p-4 rounded-xl border border-navy-800/50 bg-navy-900/30">
-          <p className="text-xs text-navy-500 text-center">
-            Demo: <span className="text-navy-300">aditya@nwtr.in</span> / <span className="text-navy-300">NwtrDemo2026!</span>
-          </p>
+        {/* Demo credentials */}
+        <div className="mt-6 p-4 rounded-xl border border-navy-800/50 bg-navy-900/30 space-y-2">
+          <p className="text-[10px] uppercase tracking-wider text-navy-500 text-center mb-3">Demo Accounts (all password: NwtrDemo2026!)</p>
+          <div className="grid grid-cols-1 gap-1.5">
+            <button type="button" onClick={() => { setEmail("aditya@nwtr.in"); setPassword("NwtrDemo2026!"); }} className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-navy-800/50 transition-colors text-left">
+              <span className="text-xs text-navy-300">aditya@nwtr.in</span>
+              <span className="text-[10px] px-2 py-0.5 rounded bg-gold-500/10 text-gold-400 font-medium">Tenant</span>
+            </button>
+            <button type="button" onClick={() => { setEmail("rajesh@nwtr.in"); setPassword("NwtrDemo2026!"); }} className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-navy-800/50 transition-colors text-left">
+              <span className="text-xs text-navy-300">rajesh@nwtr.in</span>
+              <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-medium">Owner</span>
+            </button>
+            <button type="button" onClick={() => { setEmail("ankit@nwtr.in"); setPassword("NwtrDemo2026!"); }} className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-navy-800/50 transition-colors text-left">
+              <span className="text-xs text-navy-300">ankit@nwtr.in</span>
+              <span className="text-[10px] px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 font-medium">RM</span>
+            </button>
+            <button type="button" onClick={() => { setEmail("admin@nwtr.in"); setPassword("NwtrDemo2026!"); }} className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-navy-800/50 transition-colors text-left">
+              <span className="text-xs text-navy-300">admin@nwtr.in</span>
+              <span className="text-[10px] px-2 py-0.5 rounded bg-red-500/10 text-red-400 font-medium">Admin</span>
+            </button>
+          </div>
         </div>
       </FadeIn>
     </div>

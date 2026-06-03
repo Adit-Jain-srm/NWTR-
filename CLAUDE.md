@@ -1,9 +1,47 @@
-@AGENTS.md
+# NWTR — Claude Code Instructions
+
+## Quick Reference
+- Build: `npm run build`
+- Test: `npm run test`
+- Lint: `npm run lint`
+- Types: `npx tsc --noEmit`
+
+## Project Structure
+```
+src/
+├── app/(marketing)/     # Public landing pages
+├── app/api/v1/          # REST API routes
+├── components/ui/       # 29 UI primitives (barrel: ui/index.ts)
+├── components/motion/   # 6 animation wrappers
+├── components/three/    # 3D wrappers (Spline, R3F)
+├── components/sections/ # Landing page sections
+├── components/layout/   # Navbar, Footer, Sidebar
+├── components/providers/# ThemeProvider, ToastProvider
+├── lib/                 # Utils, constants, auth, prisma, stores
+prisma/                  # Schema + seed
+docs/                    # 49 specification docs
+__tests__/               # Test suite
+```
+
+## Key Files
+- `src/lib/constants.ts` — Business rules (DEPOSIT rates, KYC tiers, nav links)
+- `src/lib/motion.ts` — Animation constants (easing, duration, variants)
+- `src/lib/auth.ts` — NextAuth config
+- `src/lib/permissions.ts` — RBAC (requireAuth, requireRole)
+- `src/lib/api-response.ts` — Standard API envelope
+
+## Rules
+1. Never commit `.env` or credentials
+2. Always run `npx next build` before pushing
+3. Use sequential execution (no parallel subagents)
+4. Follow existing patterns in component library
+5. All components need dark mode support
+6. API routes must use Zod validation + RBAC
 
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **NWTR-** (2851 symbols, 3528 relationships, 27 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+This project is indexed by GitNexus as **NWTR-** (2995 symbols, 3840 relationships, 51 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
 
 > If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
 

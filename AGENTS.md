@@ -1,13 +1,44 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# NWTR Agent Instructions
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+## Project Context
+NWTR ("New Way To Rent") is a premium proptech-fintech platform. This repo contains the full-stack Next.js application with 49 specification documents.
+
+## Key Commands
+- `npm run dev` — Start dev server
+- `npm run build` — Production build (includes `prisma generate`)
+- `npm run lint` — ESLint check
+- `npm run test` — Run test suite (Vitest)
+- `npx tsc --noEmit` — Type check
+- `npx prisma generate` — Generate Prisma client
+- `npx prisma migrate dev` — Run migrations (needs DATABASE_URL)
+- `npx tsx prisma/seed.ts` — Seed database
+
+## Architecture
+- **Framework:** Next.js 15 App Router, TypeScript strict
+- **Styling:** TailwindCSS v4 with @theme design tokens
+- **Components:** `src/components/ui/` (29 primitives), `src/components/motion/` (6), `src/components/three/` (3)
+- **API:** Route handlers at `src/app/api/v1/` (REST, Zod validation, RBAC)
+- **Auth:** NextAuth.js v5 at `src/lib/auth.ts`
+- **Database:** Prisma v5 + PostgreSQL schema at `prisma/schema.prisma`
+- **State:** Zustand stores at `src/lib/stores/`
+
+## Code Style
+- No inline imports — keep at top of file
+- Use `cn()` from `@/lib/utils` for conditional classes
+- Use design tokens (navy, gold, surface, emerald, red, amber)
+- All components must support dark mode (`dark:` variants)
+- Use Framer Motion for UI transitions, GSAP for scroll storytelling
+- API responses use `success()`, `error()`, `paginated()` from `@/lib/api-response`
+
+## Testing
+- Tests in `__tests__/` directory
+- Use Vitest + React Testing Library
+- API tests use direct route handler invocation
 
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **NWTR-** (2851 symbols, 3528 relationships, 27 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+This project is indexed by GitNexus as **NWTR-** (2995 symbols, 3840 relationships, 51 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
 
 > If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
 

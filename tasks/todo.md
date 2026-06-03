@@ -58,13 +58,22 @@
 - [ ] Standard API response envelope + error codes
 - [ ] Database seed (20 properties, 5 users, deposits, payouts)
 
-## Sub-Project 4: Portal Dashboards
-- [ ] Shared dashboard shell (sidebar, header, Cmd+K, mobile nav)
-- [ ] Tenant Portal (6 pages)
-- [ ] Owner Portal (5 pages)
-- [ ] RM Portal (6 pages)
-- [ ] Admin Portal (8 pages)
-- [ ] Auth pages (login, register)
+## Sub-Project 4: Portal Dashboards ✅ COMPLETE
+- [x] Auth: login + register with premium dark UI, validation, error handling
+- [x] Dashboard layout: sidebar + header + Cmd+K + breadcrumb + mobile nav
+- [x] Tenant: Overview (stats, tenure progress, property card, activity timeline)
+- [x] Tenant: Properties browse (filterable grid, images, search, BHK/price filters)
+- [x] Tenant: My Deposit (investment breakdown, payout history, progress bar)
+- [x] Tenant: KYC (3-tier verification, file upload, progress, submission flow)
+- [x] Owner: Payouts (history table, monthly totals, status badges)
+- [x] RM: Clients (table with KYC status, role, assignment)
+- [x] RM: Tasks (interactive list, priority badges, checkbox toggle)
+- [x] Admin: Users (management table with filters)
+- [x] Admin: Deposits (monitoring with AUM metrics)
+- [x] Admin: Analytics (revenue/growth/AUM bar charts)
+- [x] 13 dashboard routes, all static, zero errors
+- [x] 80 tests passing (6 files)
+- [x] GitNexus: 3,104 nodes, 4,205 edges, 13 clusters, 69 flows
 
 ## Sub-Project 5: AI & Intelligence
 - [ ] AI Chat with function calling (6 tools)

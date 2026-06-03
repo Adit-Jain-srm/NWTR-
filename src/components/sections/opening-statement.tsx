@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { AnimatedMeshGradient } from "@/components/motion/animated-mesh-gradient";
+import { FloatingGeometry } from "@/components/motion/floating-geometry";
 
 function formatIndianCurrency(value: number): string {
   const rounded = Math.round(value);
@@ -49,127 +51,184 @@ export function OpeningStatement() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background: Deep navy with warm red-gold gradient bleed — creates urgency */}
+      {/* Living background — animated mesh gradient (Hashgraph-style) */}
       <div className="absolute inset-0 bg-navy-950" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(220,38,38,0.06)_0%,_transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(201,169,97,0.08)_0%,_transparent_50%)]" />
+      <AnimatedMeshGradient />
 
-      {/* Pulsing warn-glow behind the number — subconscious alarm */}
-      <motion.div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-red-500/[0.04] blur-[120px]"
-        animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.05, 1] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      {/* Floating geometric shapes (Reventador-style) */}
+      <FloatingGeometry />
+
+      {/* Dot grid pattern — adds texture to the background */}
+      <div
+        className="absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(201,169,97,0.8) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
       />
 
-      {/* Content — LEFT aligned for asymmetry */}
+      {/* Content — LEFT aligned (Hashgraph-style asymmetry) */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="max-w-3xl">
-          {/* Pre-label — creates context before the number hits */}
-          <motion.p
-            className="text-xs uppercase tracking-[0.3em] text-red-400/70 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-          >
-            <span className="text-navy-600 mr-2">{"//00"}</span>
-            If you&apos;re renting in Bangalore
-          </motion.p>
-
-          {/* THE NUMBER */}
-          <div className="relative">
-            <motion.div
-              className="font-display font-bold tabular-nums leading-[0.9]"
-              style={{ fontSize: "clamp(3.5rem, 11vw, 9rem)" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-screen py-24">
+          {/* Main content — takes 7 cols */}
+          <div className="lg:col-span-7">
+            {/* Section number */}
+            <motion.p
+              className="text-[10px] uppercase tracking-[0.3em] text-navy-600 mb-6"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
             >
-              <span className="text-red-400/90">{formatIndianCurrency(count)}</span>
+              {"//00"} — The cost of renting
+            </motion.p>
+
+            {/* THE NUMBER — red, massive, confrontational */}
+            <div className="relative">
+              <motion.div
+                className="font-display font-bold tabular-nums leading-[0.85]"
+                style={{ fontSize: "clamp(3.5rem, 10vw, 8rem)" }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <span className="text-red-400/90">{formatIndianCurrency(count)}</span>
+              </motion.div>
+
+              {/* Gold strike-through on reveal */}
+              <motion.div
+                className="absolute top-1/2 left-0 h-[3px] bg-gold-500 origin-left"
+                initial={{ scaleX: 0 }}
+                animate={phase !== "counting" ? { scaleX: 1 } : {}}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                style={{ width: "70%" }}
+              />
+            </div>
+
+            {/* Copy */}
+            <motion.div
+              className="mt-8"
+              initial={{ opacity: 0, y: 10 }}
+              animate={phase !== "counting" ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <p className="text-xl sm:text-2xl lg:text-3xl text-white/90 font-light leading-snug">
+                Gone in 3 years of rent.
+              </p>
+              <p className="text-xl sm:text-2xl lg:text-3xl text-gold-400 font-medium mt-2">
+                Unless you keep it.
+              </p>
             </motion.div>
 
-            {/* Strike-through that appears on reveal — "we kill this number" */}
+            {/* CTAs */}
             <motion.div
-              className="absolute top-1/2 left-0 h-[3px] bg-gold-500 origin-left"
-              initial={{ scaleX: 0 }}
-              animate={phase !== "counting" ? { scaleX: 1 } : {}}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              style={{ width: "60%" }}
-            />
+              className="mt-10 flex flex-wrap items-center gap-4"
+              initial={{ opacity: 0, y: 10 }}
+              animate={phase === "complete" ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <a
+                href="#calculator"
+                className="group inline-flex items-center gap-2 bg-gold-500 text-navy-950 font-semibold px-6 py-3.5 rounded-lg hover:bg-gold-400 transition-all text-sm shadow-[0_0_30px_rgba(201,169,97,0.2)] hover:shadow-[0_0_40px_rgba(201,169,97,0.35)]"
+              >
+                Calculate your savings
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="group-hover:translate-x-0.5 transition-transform">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a
+                href="#how"
+                className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors border border-navy-700 hover:border-navy-500 px-5 py-3 rounded-lg"
+              >
+                How it works
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <path d="M12 5v14M5 12l7 7 7-7" />
+                </svg>
+              </a>
+            </motion.div>
           </div>
 
-          {/* The confrontation copy */}
+          {/* Right side — live data panel + visual element (5 cols) */}
           <motion.div
-            className="mt-6 sm:mt-8"
-            initial={{ opacity: 0, y: 10 }}
-            animate={phase !== "counting" ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 hidden lg:block"
+            initial={{ opacity: 0, x: 40 }}
+            animate={phase === "complete" ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <p className="text-xl sm:text-2xl text-white/90 font-light leading-relaxed">
-              Gone in 3 years of rent.
-            </p>
-            <p className="text-xl sm:text-2xl text-gold-400 font-medium mt-1">
-              Unless you keep it.
-            </p>
-          </motion.div>
+            <div className="relative">
+              {/* Glow behind panel */}
+              <div className="absolute -inset-8 bg-gold-500/[0.03] blur-[60px] rounded-full" />
 
-          {/* Two clear paths — immediately actionable */}
-          <motion.div
-            className="mt-10 flex flex-wrap items-center gap-4"
-            initial={{ opacity: 0, y: 10 }}
-            animate={phase === "complete" ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <a
-              href="#calculator"
-              className="inline-flex items-center gap-2 bg-gold-500 text-navy-950 font-semibold px-6 py-3 rounded-lg hover:bg-gold-400 transition-colors text-sm"
-            >
-              Calculate your savings
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a
-              href="#how"
-              className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors"
-            >
-              See how it works
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <path d="M12 5v14M5 12l7 7 7-7" />
-              </svg>
-            </a>
+              {/* Dashboard preview mockup — shows real product (Reventador-style) */}
+              <div className="relative border border-navy-700/50 bg-navy-900/60 backdrop-blur-sm rounded-lg overflow-hidden">
+                {/* Fake window chrome */}
+                <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-navy-800/50">
+                  <div className="w-2 h-2 rounded-full bg-red-500/40" />
+                  <div className="w-2 h-2 rounded-full bg-amber-500/40" />
+                  <div className="w-2 h-2 rounded-full bg-emerald-500/40" />
+                  <span className="ml-3 text-[9px] text-navy-500">nwtr.in/dashboard</span>
+                </div>
+
+                {/* Dashboard content preview */}
+                <div className="p-5 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-[9px] text-navy-500 uppercase tracking-wider">Deposit Status</div>
+                      <div className="text-sm font-display font-bold text-white mt-0.5">Active — 287 days left</div>
+                    </div>
+                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                    </div>
+                  </div>
+
+                  <div className="h-px bg-navy-800" />
+
+                  {/* Mini stats */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-navy-800/40 rounded p-3">
+                      <div className="text-[9px] text-navy-500">Your Deposit</div>
+                      <div className="text-sm font-display font-bold text-gold-400 mt-1">₹84,00,000</div>
+                    </div>
+                    <div className="bg-navy-800/40 rounded p-3">
+                      <div className="text-[9px] text-navy-500">Monthly Rent</div>
+                      <div className="text-sm font-display font-bold text-emerald-400 mt-1">₹0</div>
+                    </div>
+                    <div className="bg-navy-800/40 rounded p-3">
+                      <div className="text-[9px] text-navy-500">Total Saved</div>
+                      <div className="text-sm font-display font-bold text-white mt-1">₹4,50,000</div>
+                    </div>
+                    <div className="bg-navy-800/40 rounded p-3">
+                      <div className="text-[9px] text-navy-500">Current Yield</div>
+                      <div className="text-sm font-display font-bold text-emerald-400 mt-1">7.52%</div>
+                    </div>
+                  </div>
+
+                  {/* Mini progress bar */}
+                  <div>
+                    <div className="flex justify-between text-[9px] text-navy-500 mb-1">
+                      <span>Tenure Progress</span>
+                      <span>78/365 days</span>
+                    </div>
+                    <div className="h-1.5 bg-navy-800 rounded-full overflow-hidden">
+                      <div className="h-full w-[21%] bg-gradient-to-r from-gold-600 to-gold-400 rounded-full" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating tag */}
+              <motion.div
+                className="absolute -bottom-3 -left-3 bg-navy-800 border border-navy-700 rounded px-2.5 py-1.5 text-[9px] text-navy-300"
+                animate={{ y: [0, -4, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
+                Live preview
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Right side: floating data card — uses the dead space */}
-      <motion.div
-        className="absolute right-8 lg:right-16 top-1/2 -translate-y-1/2 hidden lg:block"
-        initial={{ opacity: 0, x: 40 }}
-        animate={phase === "complete" ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.7, delay: 0.5 }}
-      >
-        <div className="w-64 border border-navy-800 bg-navy-900/50 backdrop-blur-sm p-6">
-          <div className="text-[9px] uppercase tracking-[0.2em] text-navy-500 mb-4">Live snapshot</div>
-          <div className="space-y-4">
-            <div>
-              <div className="text-xs text-navy-400">Current yield</div>
-              <div className="text-lg font-display font-bold text-emerald-400">7.52%</div>
-            </div>
-            <div className="h-px bg-navy-800" />
-            <div>
-              <div className="text-xs text-navy-400">Deposits secured</div>
-              <div className="text-lg font-display font-bold text-white">₹2.3 Cr</div>
-            </div>
-            <div className="h-px bg-navy-800" />
-            <div>
-              <div className="text-xs text-navy-400">Return rate</div>
-              <div className="text-lg font-display font-bold text-gold-400">100%</div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Scroll companion indicator */}
+      {/* Bottom scroll indicator — left aligned (Hashgraph-style) */}
       <motion.div
         className="absolute bottom-8 left-6 sm:left-8 lg:left-12"
         initial={{ opacity: 0 }}

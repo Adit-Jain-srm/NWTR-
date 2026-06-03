@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 
 export function SoundToggle() {
   const [playing, setPlaying] = useState(false);
-  const [loaded, setLoaded] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const toggle = useCallback(() => {
@@ -13,7 +12,6 @@ export function SoundToggle() {
       const audio = new Audio("/audio/ambient.mp3");
       audio.loop = true;
       audio.volume = 0.15;
-      audio.addEventListener("canplaythrough", () => setLoaded(true), { once: true });
       audioRef.current = audio;
     }
 

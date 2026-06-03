@@ -2,7 +2,6 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
-
 export function MoneyFlow() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -66,8 +65,14 @@ export function MoneyFlow() {
     >
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,169,97,0.04)_0%,_transparent_50%)]" />
-        {/* Subtle grid for depth */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(rgba(201,169,97,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,169,97,0.3) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+        {/* Animated dot grid */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle, rgba(201,169,97,0.8) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+        {/* Breathing gold glow */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gold-500/[0.03] blur-[120px]"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
 
         <div className="relative z-10 w-full max-w-3xl mx-auto px-6">
           {/* Section label */}

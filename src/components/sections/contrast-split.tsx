@@ -17,15 +17,19 @@ export function ContrastSplit() {
       <div className="absolute top-6 left-6 sm:left-8 z-20 text-[10px] uppercase tracking-[0.3em] text-navy-600">{"//01"}</div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 min-h-[80vh]">
-        {/* LEFT: Traditional Rent — dark red-tinted background */}
+        {/* LEFT: Traditional Rent — dark red atmosphere with animated elements */}
         <motion.div
-          className="relative p-8 sm:p-12 lg:p-16 flex items-center bg-navy-950"
+          className="relative p-8 sm:p-12 lg:p-16 flex items-center bg-[#0D0A0A]"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
         >
-          {/* Red ambient bleed */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(220,38,38,0.04)_0%,_transparent_70%)]" />
+          {/* Animated red glow blob */}
+          <motion.div
+            className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[300px] h-[300px] rounded-full bg-red-500/[0.04] blur-[100px]"
+            animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
           <div className="absolute top-0 right-0 bottom-0 w-px bg-gradient-to-b from-transparent via-red-500/10 to-transparent hidden md:block" />
 
           <motion.div
@@ -70,15 +74,19 @@ export function ContrastSplit() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT: NWTR Way — warm gold-tinted, slightly lighter background */}
+        {/* RIGHT: NWTR Way — warm gold atmosphere with animated glow */}
         <motion.div
-          className="relative p-8 sm:p-12 lg:p-16 flex items-center bg-[#0C1825]"
+          className="relative p-8 sm:p-12 lg:p-16 flex items-center bg-[#0C1420]"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          {/* Gold ambient bleed */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,169,97,0.05)_0%,_transparent_70%)]" />
+          {/* Animated gold glow blob */}
+          <motion.div
+            className="absolute top-1/2 left-1/3 w-[250px] h-[250px] rounded-full bg-gold-500/[0.05] blur-[80px]"
+            animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          />
 
           <motion.div
             className="relative z-10 w-full"

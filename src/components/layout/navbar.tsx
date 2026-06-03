@@ -48,12 +48,12 @@ export function Navbar() {
               </Link>
             ))}
             {/* Calculator quick-access */}
-            <a
+            <Link
               href="/#calculator"
               className="text-sm font-medium text-gold-400/80 hover:text-gold-400 transition-colors"
             >
               Calculate
-            </a>
+            </Link>
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
@@ -96,13 +96,13 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <a
+              <Link
                 href="/#calculator"
                 className="text-base font-medium text-gold-400 py-2.5 px-3 rounded-lg hover:bg-navy-800"
                 onClick={() => setMobileOpen(false)}
               >
                 Calculate Savings
-              </a>
+              </Link>
               <div className="flex flex-col gap-3 pt-4 mt-4 border-t border-navy-800">
                 <Link href="/auth/login"><Button variant="outline" fullWidth>Sign In</Button></Link>
                 <Link href="/auth/register"><Button variant="primary" fullWidth>Get Started</Button></Link>

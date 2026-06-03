@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastProcessedAt": "2026-06-03T03:06:00.000Z",
+  "lastProcessedAt": "2026-06-03T18:07:00.000Z",
   "transcripts": {
     "277ac1c7-230d-429d-afb3-824a6baab4df": {
       "mtime": "2026-05-21T16:05:09.000Z",
@@ -12,9 +12,19 @@
       ]
     },
     "5a6c485f-1ca5-48ce-97e9-9b77d39d429e": {
-      "mtime": "2026-06-03T02:44:12.000Z",
+      "mtime": "2026-06-03T07:48:28.000Z",
       "processed": true,
-      "highSignalUpdates": []
+      "highSignalUpdates": [
+        "No decorative 3D — visuals must represent the product",
+        "Asymmetric layouts — don't center everything",
+        "Living animated backgrounds — never flat gradients",
+        "Color variation across sections — never monotone",
+        "Contrast minimum — navy-500 on navy-950 is unreadable",
+        "Every button must link somewhere",
+        "Visual consistency pre/post login (always dark)",
+        "Study reference sites deeply — extract and implement specific techniques",
+        "Sound + haptics on buttons"
+      ]
     }
   }
 }

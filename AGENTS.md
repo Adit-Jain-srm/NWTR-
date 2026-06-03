@@ -42,6 +42,17 @@ NWTR ("New Way To Rent") is a premium proptech-fintech platform. This repo conta
 - **Commit frequently** with descriptive messages (feat/fix/docs/test prefixes)
 - **Build must pass** (`next build` + `tsc --noEmit` + `vitest run`) before any push
 
+## Design & UI Principles (User-Enforced)
+- **No decorative 3D** — every visual element must represent something about the product (money flow, fund structure, dashboard preview). Never use generic spheres/shapes as filler.
+- **Asymmetric layouts** — don't center everything. Use grid cols (7/5, 8/4), left-align hero content, stagger elements.
+- **Living backgrounds** — use animated mesh gradients, floating geometry, breathing glows. Never flat static gradients on dark backgrounds.
+- **Color variation across sections** — each section needs its own background mood (navy-950, #070E18, #0D0A0A, navy-900). Never monotone.
+- **Contrast minimum** — text-navy-500 on bg-navy-950 is UNREADABLE. Use navy-200/white for body, gold-400/emerald-400 for emphasis. Every text must pass visual inspection.
+- **Every button must link somewhere** — no orphan buttons. If a destination doesn't exist yet, link to /auth/register or the closest relevant page.
+- **Visual consistency pre/post login** — dashboard uses same dark premium aesthetic as landing page (always dark, gold accents, glass effects).
+- **Study reference sites deeply** — when given URLs, extract specific techniques (font sizes, color values, layout mechanics, animation types) and implement them. Don't just note them.
+- **Sound + haptics** — buttons should have satisfying click sounds. Interactions should feel tactile.
+
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 

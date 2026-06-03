@@ -76,6 +76,7 @@ export function MoneyFlow() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
           >
+            <span className="text-navy-600 mr-2">{"//02"}</span>
             Where your money goes
           </motion.p>
 

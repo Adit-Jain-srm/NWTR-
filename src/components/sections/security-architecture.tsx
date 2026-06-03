@@ -17,7 +17,7 @@ export function SecurityArchitecture() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-navy-500 mb-3">Security architecture</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-navy-500 mb-3"><span className="text-navy-600 mr-2">{"//05"}</span> Security architecture</p>
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
             Even if NWTR disappears, your money is yours.
           </h2>

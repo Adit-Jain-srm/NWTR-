@@ -50,6 +50,7 @@ export function ProofNumbers() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
         >
+          <span className="text-navy-600 mr-2">{"//03"}</span>
           The proof
         </motion.p>
 

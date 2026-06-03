@@ -71,6 +71,7 @@ export function OpeningStatement() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.3 }}
           >
+            <span className="text-navy-600 mr-2">{"//00"}</span>
             If you&apos;re renting in Bangalore
           </motion.p>
 

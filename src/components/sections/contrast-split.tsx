@@ -13,6 +13,9 @@ export function ContrastSplit() {
       ref={sectionRef}
       className="relative overflow-hidden"
     >
+      {/* Section number */}
+      <div className="absolute top-6 left-6 sm:left-8 z-20 text-[10px] uppercase tracking-[0.3em] text-navy-600">{"//01"}</div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 min-h-[80vh]">
         {/* LEFT: Traditional Rent — dark red-tinted background */}
         <motion.div

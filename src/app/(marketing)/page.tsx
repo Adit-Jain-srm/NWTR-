@@ -6,8 +6,10 @@ import { MoneyFlow } from "@/components/sections/money-flow";
 import { ProofNumbers } from "@/components/sections/proof-numbers";
 import { DepositSimulator } from "@/components/sections/deposit-simulator";
 import { SecurityArchitecture } from "@/components/sections/security-architecture";
+import { PropertyShowcase } from "@/components/sections/property-showcase";
 import { ExclusiveClose } from "@/components/sections/exclusive-close";
 import { ScrollCompanion } from "@/components/motion/scroll-companion";
+import { SoundToggle } from "@/components/motion/sound-toggle";
 import { PagePreloader } from "@/components/motion/page-preloader";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -24,6 +26,7 @@ export default function Home() {
         transition={{ duration: 0.4 }}
       >
         <ScrollCompanion />
+        <SoundToggle />
         <OpeningStatement />
         <ContrastSplit />
         <div id="how">
@@ -33,6 +36,7 @@ export default function Home() {
         <div id="calculator">
           <DepositSimulator />
         </div>
+        <PropertyShowcase />
         <SecurityArchitecture />
         <ExclusiveClose />
       </motion.div>

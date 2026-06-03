@@ -31,7 +31,7 @@ export function DepositSimulator() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-navy-500 mb-3">Your numbers</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-navy-500 mb-3"><span className="text-navy-600 mr-2">{"//04"}</span> Your numbers</p>
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
             Calculate your position
           </h2>

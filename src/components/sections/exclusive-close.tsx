@@ -49,22 +49,26 @@ export function ExclusiveClose() {
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <MagneticButton strength={0.25}>
-            <Button
-              variant="primary"
-              size="lg"
-              className="shadow-gold hover:shadow-gold-lg transition-all duration-300 text-base font-semibold min-w-[180px]"
-            >
-              Apply as Tenant
-            </Button>
+            <a href="/auth/register">
+              <Button
+                variant="primary"
+                size="lg"
+                className="shadow-gold hover:shadow-gold-lg transition-all duration-300 text-base font-semibold min-w-[180px]"
+              >
+                Apply as Tenant
+              </Button>
+            </a>
           </MagneticButton>
           <MagneticButton strength={0.2}>
-            <Button
-              variant="ghost"
-              size="lg"
-              className="text-white/70 hover:text-white border border-navy-700 hover:border-navy-500 min-w-[180px]"
-            >
-              List Your Property
-            </Button>
+            <a href="/auth/register">
+              <Button
+                variant="ghost"
+                size="lg"
+                className="text-white/70 hover:text-white border border-navy-700 hover:border-navy-500 min-w-[180px]"
+              >
+                List Your Property
+              </Button>
+            </a>
           </MagneticButton>
         </motion.div>
 

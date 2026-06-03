@@ -328,9 +328,11 @@ export function HowItWorks() {
               </div>
 
               <div className="hiw-animate mt-10">
-                <Button variant="primary" size="lg" className="shadow-gold">
-                  Start Your Journey
-                </Button>
+                <a href="/auth/register">
+                  <Button variant="primary" size="lg" className="shadow-gold">
+                    Start Your Journey
+                  </Button>
+                </a>
               </div>
             </div>
           </Container>

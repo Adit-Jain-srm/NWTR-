@@ -214,3 +214,17 @@ html.dark ::selection {
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Button Ripple Animation
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes ripple {
+  to {
+    width: 300px;
+    height: 300px;
+    margin-left: -150px;
+    margin-top: -150px;
+    opacity: 0;
+  }
+}

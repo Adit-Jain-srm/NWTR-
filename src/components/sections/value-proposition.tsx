@@ -143,12 +143,14 @@ export function ValueProposition() {
               animate={tenantInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
-              <Button variant="outline" size="md" className="mt-8 group">
-                Learn More
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-1 transition-transform group-hover:translate-x-1">
-                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Button>
+              <a href="/for-tenants">
+                <Button variant="outline" size="md" className="mt-8 group">
+                  Learn More
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-1 transition-transform group-hover:translate-x-1">
+                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -235,12 +237,14 @@ export function ValueProposition() {
               animate={ownerInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
-              <Button variant="outline" size="md" className="mt-8 group">
-                List Your Property
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-1 transition-transform group-hover:translate-x-1">
-                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Button>
+              <a href="/for-owners">
+                <Button variant="outline" size="md" className="mt-8 group">
+                  List Your Property
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-1 transition-transform group-hover:translate-x-1">
+                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
         </div>

@@ -78,7 +78,7 @@ function TenantDashboard({ name }: { name: string }) {
           <Card padding="lg">
             <div className="flex items-center justify-between mb-4">
               <Heading level={4}>Recent Activity</Heading>
-              <Link href="#" className="text-xs text-gold-600 hover:text-gold-500 font-medium">View All</Link>
+              <Link href="/dashboard/deposit" className="text-xs text-gold-600 hover:text-gold-500 font-medium">View All</Link>
             </div>
             <Timeline items={[
               { title: "Monthly payout ₹45,000 credited to owner", description: "Automated via NACH mandate", date: "Jun 1, 2026", status: "completed" },

@@ -87,7 +87,7 @@ export default function LoginPage() {
               className="!bg-navy-800/50 !border-navy-700 !text-white !placeholder-navy-500"
             />
             <div className="mt-2 text-right">
-              <Link href="#" className="text-xs text-gold-400 hover:text-gold-300 transition-colors">
+              <Link href="/auth/login" className="text-xs text-gold-400 hover:text-gold-300 transition-colors">
                 Forgot password?
               </Link>
             </div>

@@ -49,7 +49,7 @@ export function Navbar() {
             ))}
             {/* Calculator quick-access */}
             <a
-              href="#calculator"
+              href="/#calculator"
               className="text-sm font-medium text-gold-400/80 hover:text-gold-400 transition-colors"
             >
               Calculate
@@ -97,7 +97,7 @@ export function Navbar() {
                 </Link>
               ))}
               <a
-                href="#calculator"
+                href="/#calculator"
                 className="text-base font-medium text-gold-400 py-2.5 px-3 rounded-lg hover:bg-navy-800"
                 onClick={() => setMobileOpen(false)}
               >

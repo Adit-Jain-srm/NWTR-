@@ -3,6 +3,7 @@
 import { Sidebar } from "@/components/layout/sidebar";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { CommandPalette } from "@/components/composite/command-palette";
+import { AIChatWidget } from "@/components/ai/chat-widget";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Logo } from "@/components/ui/logo";
 import { useTheme } from "@/components/providers/theme-provider";
@@ -70,6 +71,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       {/* Command palette */}
       <CommandPalette />
+
+      {/* AI Chat */}
+      <AIChatWidget />
     </div>
   );
 }

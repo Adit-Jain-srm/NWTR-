@@ -2,9 +2,11 @@ import { cn } from "@/lib/utils";
 
 type ContainerSize = "xs" | "sm" | "md" | "lg" | "xl" | "full";
 
-interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ContainerProps {
   size?: ContainerSize;
-  as?: React.ElementType;
+  className?: string;
+  children?: React.ReactNode;
+  id?: string;
 }
 
 const sizeStyles: Record<ContainerSize, string> = {
@@ -16,19 +18,10 @@ const sizeStyles: Record<ContainerSize, string> = {
   full: "max-w-none",
 };
 
-export function Container({
-  className,
-  size = "lg",
-  as: Component = "div",
-  children,
-  ...props
-}: ContainerProps) {
+export function Container({ className, size = "lg", children, id }: ContainerProps) {
   return (
-    <Component
-      className={cn("mx-auto w-full px-4 sm:px-6 lg:px-8", sizeStyles[size], className)}
-      {...props}
-    >
+    <div id={id} className={cn("mx-auto w-full px-4 sm:px-6 lg:px-8", sizeStyles[size], className)}>
       {children}
-    </Component>
+    </div>
   );
 }

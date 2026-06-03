@@ -1,9 +1,11 @@
 import { cn } from "@/lib/utils";
 
-interface SectionProps extends React.HTMLAttributes<HTMLElement> {
-  as?: React.ElementType;
+interface SectionProps {
   dark?: boolean;
   spacing?: "sm" | "md" | "lg" | "xl";
+  className?: string;
+  children?: React.ReactNode;
+  id?: string;
 }
 
 const spacingStyles = {
@@ -13,24 +15,13 @@ const spacingStyles = {
   xl: "py-24 sm:py-32 lg:py-40",
 };
 
-export function Section({
-  className,
-  as: Component = "section",
-  dark = false,
-  spacing = "lg",
-  children,
-  ...props
-}: SectionProps) {
+export function Section({ className, dark = false, spacing = "lg", children, id }: SectionProps) {
   return (
-    <Component
-      className={cn(
-        spacingStyles[spacing],
-        dark && "bg-navy-900 text-white dark:bg-navy-950",
-        className
-      )}
-      {...props}
+    <section
+      id={id}
+      className={cn(spacingStyles[spacing], dark && "bg-navy-900 text-white dark:bg-navy-950", className)}
     >
       {children}
-    </Component>
+    </section>
   );
 }

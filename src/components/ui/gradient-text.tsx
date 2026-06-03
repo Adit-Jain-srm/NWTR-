@@ -2,9 +2,10 @@ import { cn } from "@/lib/utils";
 
 type GradientType = "gold" | "navy-to-gold" | "gold-to-white";
 
-interface GradientTextProps extends React.HTMLAttributes<HTMLElement> {
+interface GradientTextProps {
   gradient?: GradientType;
-  as?: React.ElementType;
+  className?: string;
+  children?: React.ReactNode;
 }
 
 const gradientStyles: Record<GradientType, string> = {
@@ -13,23 +14,10 @@ const gradientStyles: Record<GradientType, string> = {
   "gold-to-white": "bg-gradient-to-r from-gold-400 via-gold-300 to-white",
 };
 
-export function GradientText({
-  gradient = "gold",
-  as: Component = "span",
-  className,
-  children,
-  ...props
-}: GradientTextProps) {
+export function GradientText({ gradient = "gold", className, children }: GradientTextProps) {
   return (
-    <Component
-      className={cn(
-        "bg-clip-text text-transparent",
-        gradientStyles[gradient],
-        className
-      )}
-      {...props}
-    >
+    <span className={cn("bg-clip-text text-transparent", gradientStyles[gradient], className)}>
       {children}
-    </Component>
+    </span>
   );
 }

@@ -3,11 +3,12 @@ import { cn } from "@/lib/utils";
 type TextSize = "xs" | "sm" | "base" | "lg" | "xl";
 type TextWeight = "normal" | "medium" | "semibold" | "bold";
 
-interface TextProps extends React.HTMLAttributes<HTMLElement> {
+interface TextProps {
   size?: TextSize;
   weight?: TextWeight;
   muted?: boolean;
-  as?: React.ElementType;
+  className?: string;
+  children?: React.ReactNode;
 }
 
 const sizeStyles: Record<TextSize, string> = {
@@ -25,29 +26,18 @@ const weightStyles: Record<TextWeight, string> = {
   bold: "font-bold",
 };
 
-export function Text({
-  size = "base",
-  weight = "normal",
-  muted = false,
-  as: Component = "p",
-  className,
-  children,
-  ...props
-}: TextProps) {
+export function Text({ size = "base", weight = "normal", muted = false, className, children }: TextProps) {
   return (
-    <Component
+    <p
       className={cn(
         sizeStyles[size],
         weightStyles[weight],
-        muted
-          ? "text-navy-500 dark:text-navy-400"
-          : "text-navy-700 dark:text-navy-200",
+        muted ? "text-navy-500 dark:text-navy-400" : "text-navy-700 dark:text-navy-200",
         "leading-relaxed",
         className
       )}
-      {...props}
     >
       {children}
-    </Component>
+    </p>
   );
 }

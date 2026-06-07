@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+
+# NWTR
+
+**Next-generation Web-based Real Estate Platform**
+
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma)](https://www.prisma.io/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+An AI-powered real estate platform with immersive 3D experiences, intelligent property search, and modern authentication.
+
+</div>
+
+---
+
+## About
+
+NWTR is a full-stack real estate web application that combines AI capabilities with immersive 3D visualization to create a next-generation property discovery experience. Built with Next.js 15 and React 19, it features real-time AI-powered search, interactive 3D property tours, and a modern authentication system.
+
+## Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| **Framework** | Next.js 15, React 19, TypeScript |
+| **3D & Animation** | Three.js, React Three Fiber, GSAP, Framer Motion, Spline |
+| **AI** | OpenAI, Vercel AI SDK |
+| **Database** | Prisma ORM |
+| **Auth** | NextAuth.js v5 (Beta) |
+| **UI** | Tailwind CSS, Radix UI, shadcn/ui, cmdk |
+| **Storage** | Vercel Blob |
+| **Email** | Resend |
+| **Testing** | Vitest |
+| **State** | Zustand |
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm / yarn / pnpm / bun
+- PostgreSQL (for Prisma)
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/Adit-Jain-srm/NWTR-.git
+cd NWTR-
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+
+# Generate Prisma client
+npx prisma generate
+
+# Run database migrations
+npx prisma migrate dev
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **AI-Powered Search** — Natural language property search using OpenAI
+- **3D Property Tours** — Immersive experiences with Three.js and Spline
+- **Modern Auth** — Secure authentication with NextAuth.js v5
+- **Real-time Charts** — Property analytics with Recharts
+- **Responsive Design** — Mobile-first with Tailwind CSS
+- **File Uploads** — Document and image management with Vercel Blob
+- **Email Notifications** — Transactional emails via Resend
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/          # Next.js App Router pages and API routes
+├── components/   # Reusable UI components
+├── lib/          # Utilities, database client, helpers
+└── assets/       # Static assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+| `npm run test` | Run tests with Vitest |
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+  <sub>Built with Next.js, TypeScript, and AI</sub>
+</div>

@@ -2,16 +2,13 @@
 
 # NWTR
 
-**Next-generation Web-based Real Estate Platform**
+**AI-powered real estate platform with immersive 3D property experiences**
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
-[![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma)](https://www.prisma.io/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![Three.js](https://img.shields.io/badge/Three.js-R3F-black?logo=three.js)](https://threejs.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-An AI-powered real estate platform with immersive 3D experiences, intelligent property search, and modern authentication.
 
 </div>
 
@@ -19,7 +16,9 @@ An AI-powered real estate platform with immersive 3D experiences, intelligent pr
 
 ## About
 
-NWTR is a full-stack real estate web application that combines AI capabilities with immersive 3D visualization to create a next-generation property discovery experience. Built with Next.js 15 and React 19, it features real-time AI-powered search, interactive 3D property tours, and a modern authentication system.
+NWTR is a full-stack real estate platform that pairs AI-driven property search with interactive 3D visualization. Users describe what they're looking for in natural language, and the system surfaces matching properties — complete with immersive walkthroughs built on Three.js, React Three Fiber, and Spline.
+
+The frontend ships a 42-component design system, scroll-driven animations via GSAP, and a responsive layout built on Tailwind CSS and Radix UI primitives.
 
 ## Tech Stack
 
@@ -28,13 +27,33 @@ NWTR is a full-stack real estate web application that combines AI capabilities w
 | **Framework** | Next.js 15, React 19, TypeScript |
 | **3D & Animation** | Three.js, React Three Fiber, GSAP, Framer Motion, Spline |
 | **AI** | OpenAI, Vercel AI SDK |
-| **Database** | Prisma ORM |
-| **Auth** | NextAuth.js v5 (Beta) |
-| **UI** | Tailwind CSS, Radix UI, shadcn/ui, cmdk |
+| **Database** | Prisma ORM, PostgreSQL |
+| **Auth** | NextAuth.js v5 |
+| **UI / Design System** | Tailwind CSS, Radix UI, shadcn/ui, cmdk (42 components) |
 | **Storage** | Vercel Blob |
 | **Email** | Resend |
 | **Testing** | Vitest |
 | **State** | Zustand |
+
+## Features
+
+- **Natural Language Search** — Ask for properties in plain English; OpenAI interprets intent and filters results accordingly.
+- **3D Property Tours** — Interactive walkthroughs rendered with Three.js, React Three Fiber, and Spline scenes.
+- **Authentication** — Session-based auth with NextAuth.js v5 supporting OAuth and credential providers.
+- **Property Analytics** — Visual dashboards with Recharts for pricing trends, comparisons, and market data.
+- **File Management** — Document and image uploads handled through Vercel Blob.
+- **Email Notifications** — Transactional messaging via Resend for alerts and confirmations.
+- **Responsive UI** — Mobile-first layouts with a consistent design system across all viewports.
+
+## Architecture
+
+```
+src/
+├── app/          # App Router — pages, layouts, and API routes
+├── components/   # 42-component design system (ui/, 3d/, layouts/)
+├── lib/          # Database client, AI utilities, helpers
+└── assets/       # Static assets and Spline scenes
+```
 
 ## Getting Started
 
@@ -42,73 +61,47 @@ NWTR is a full-stack real estate web application that combines AI capabilities w
 
 - Node.js 18+
 - npm / yarn / pnpm / bun
-- PostgreSQL (for Prisma)
+- PostgreSQL
 
 ### Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/Adit-Jain-srm/NWTR-.git
 cd NWTR-
 
-# Install dependencies
 npm install
 
-# Set up environment variables
 cp .env.example .env.local
+# Fill in your OpenAI key, database URL, and auth secrets
 
-# Generate Prisma client
 npx prisma generate
-
-# Run database migrations
 npx prisma migrate dev
 
-# Start development server
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the application.
-
-## Features
-
-- **AI-Powered Search** — Natural language property search using OpenAI
-- **3D Property Tours** — Immersive experiences with Three.js and Spline
-- **Modern Auth** — Secure authentication with NextAuth.js v5
-- **Real-time Charts** — Property analytics with Recharts
-- **Responsive Design** — Mobile-first with Tailwind CSS
-- **File Uploads** — Document and image management with Vercel Blob
-- **Email Notifications** — Transactional emails via Resend
-
-## Project Structure
-
-```
-src/
-├── app/          # Next.js App Router pages and API routes
-├── components/   # Reusable UI components
-├── lib/          # Utilities, database client, helpers
-└── assets/       # Static assets
-```
 
 ## Scripts
 
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start development server |
-| `npm run build` | Build for production |
+| `npm run build` | Production build |
 | `npm run start` | Start production server |
 | `npm run lint` | Run ESLint |
 | `npm run test` | Run tests with Vitest |
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome. Please open an issue to discuss proposed changes before submitting a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
 <div align="center">
-  <sub>Built with Next.js, TypeScript, and AI</sub>
+  <sub>Built with Next.js 15, Three.js, and OpenAI</sub>
 </div>
